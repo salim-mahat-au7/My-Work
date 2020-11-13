@@ -1,0 +1,64 @@
+Task 1 : Provide some example of config file separation for dev and prod environments.
+
+
+1. we can separate config file into developement(dev) and production(prod) and keys config file.
+
+2.In dev file we can write code as 
+
+
+--------------------------------------------
+module.exports={
+    MONGOURI:"YYour Database link",
+    JWT_SECRET:"seceret
+}
+--------------------------------------------
+
+
+in developement we cand directely use database link secrets also we can use this data from .env file
+
+
+3.In prod file we can write code as 
+
+-------------------------------------------
+module.exports={
+    MONGOURI:process.env.MOGOURI,
+    JWT_SECRET:process.env.JWT_SEC
+}
+------------------------------------------
+
+in prod file we have to strictely use .env variabels beacuse our code is on server so chances of hacking.
+
+
+4.In keys file we have to define which mode we have to select at time of our code to run on production and developement
+
+---------------------------------------------
+
+if(process.env.NODE_ENV==='production'){
+    module.exports = require('./prod')
+}else{
+    module.exports = require('./dev')
+}
+
+--------------------------------------------
+
+in this code if .env variabeles are on production mode then prodution server can start
+if developement mode the it start developement mode
+
+
+5. Also we have to define in main server file to server run as production mode 
+
+-----------------------------------------------------------------------------------
+
+if(process.env.NODE_ENV=="production"){
+    app.use(express.static('client/build'))
+    const path = require('path')
+    app.get("*",(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+    })
+}
+
+------------------------------------------------------------------------------------
+
+using this code we have defined our server is running on production mode.
+
+6. we have to set all enviornment varibels in .env file

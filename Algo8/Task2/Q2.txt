@@ -1,0 +1,73 @@
+Task 2 : Convert any callback into a promise with example code of callback and promise.
+
+
+1 - In ES5 callbacks are the only wat to achieve asynchronus code operation in javascript. 
+    but there are some problems in callbacks .
+
+    nested callbacks problem this is callback hell.
+
+2 - In ES6 this error are solved as solution as promicess in javascript 
+
+3 - Promicess is to improve the developer experience with asynchronous programming. As its name suggests,
+    it's a promise that a JavaScript object will eventually return a value or an error.
+
+4 - There are 3 states in promicess 
+    1 - Pending
+    2 - Fulfilled
+    3 - Rejected
+
+
+5 - Pending: in this stste the operation is ot completed
+
+6 - Fulfilled: in this state operation are completed sucessfully.
+
+7 - Rejected: in this state operations are failed
+
+----------------------------------------------------------------------------------
+
+Example - of callback :-
+
+var callback = function(err, success) { 
+    if(err) { 
+        console.log("Today is good day"); 
+    } 
+    else { 
+        console.log("Today is not good day"); 
+    } 
+} 
+var caller = function(status, callback){ 
+    if(status === 'Happy') 
+        callback(null, true); 
+    else { 
+        callback(new Error(), false); 
+    }  
+} 
+caller('Happy', callback); 
+caller('Sad', callback); 
+
+---------------------------------------------------------------------------------
+
+Example - of promise :-
+
+var error = function(){ 
+    console.log("Today is good day"); 
+} 
+     
+var success = function(){ 
+    console.log("Today is not good day"); 
+} 
+     
+var caller = function(status) { 
+    return new Promise(function(resolve, reject) { 
+        if(status === 'Happy') { 
+          resolve(); 
+        } 
+        else {  
+            reject(); 
+        } 
+    }); 
+}; 
+caller('Happy').then(success).catch(error); 
+caller('Sad').then(success).catch(error); 
+
+-----------------------------------------------------------------------------
