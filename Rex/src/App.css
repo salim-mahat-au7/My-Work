@@ -1,0 +1,110 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*---------------------------------------
+icons
+----------------------------------------*/
+i {
+  color: rgb(175, 173, 173);
+  margin-right: 10px;
+}
+
+.fa-arrow-up {
+  color: #28a745;
+}
+
+.fa-arrow-down {
+  color: #ff0000;
+}
+
+/*-------------------------------------------
+company details
+---------------------------------------------*/
+.cname {
+  color: #3fad59;
+  font-weight: 600;
+}
+
+.sharetype {
+  font-size: small;
+  text-align: center;
+  color: rgb(175, 173, 173);
+}
+
+.price {
+  text-align: center;
+  color: #61dafb;
+  font-weight: 900;
+  font-size: 25px;
+}
+
+/*--------------------------------------------
+mastercard
+----------------------------------------------*/
+.mastercard {
+  width: 71vw;
+  border: #96979788 solid 1px;
+}
+
+/*-------------------------------------------------
+card button
+--------------------------------------------------*/
+.btn-org {
+  color: orange;
+  border-color: orange;
+  font-weight: 500;
+}
+
+.btn-org:hover {
+  color: #ffffff;
+  background-color: orange;
+  outline: none;
+}
+
+/*------------------------------------------------------
+slider bar
+-------------------------------------------------------*/
+input {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.doughnut {
+  float: left;
+}
