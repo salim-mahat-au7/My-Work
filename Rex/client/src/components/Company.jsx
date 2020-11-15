@@ -1,15 +1,19 @@
 import React from "react";
 
-const Company = () => {
+const Company = (props) => {
   return (
     <>
-      <div className="row">
-        <div className="col">
-          <span className="cname">iShares</span>
-          <br />
-          <span className="sharetype">S&P 500 Index</span>
+      {props.csData.map((data) => (
+        <div className="border border-gray p-1 m-1">
+          <div className="row mt-1">
+            <div className="col">
+              <span className="cname">iShares</span>
+              <br />
+              <span className="sharetype">{data.scrip}</span>
+            </div>
+          </div>
         </div>
-      </div>
+      ))}
     </>
   );
 };

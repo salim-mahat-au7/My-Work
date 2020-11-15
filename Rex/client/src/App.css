@@ -2,10 +2,10 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.doughnut {
+  float: left;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -36,10 +36,7 @@
     transform: rotate(360deg);
   }
 }
-
-/*---------------------------------------
-icons
-----------------------------------------*/
+/
 i {
   color: rgb(175, 173, 173);
   margin-right: 10px;
@@ -53,9 +50,6 @@ i {
   color: #ff0000;
 }
 
-/*-------------------------------------------
-company details
----------------------------------------------*/
 .cname {
   color: #3fad59;
   font-weight: 600;
@@ -74,37 +68,23 @@ company details
   font-size: 25px;
 }
 
-/*--------------------------------------------
-mastercard
-----------------------------------------------*/
 .mastercard {
   width: 71vw;
-  border: #96979788 solid 1px;
 }
 
-/*-------------------------------------------------
-card button
---------------------------------------------------*/
 .btn-org {
   color: orange;
   border-color: orange;
   font-weight: 500;
 }
 
-.btn-org:hover {
-  color: #ffffff;
-  background-color: orange;
-  outline: none;
-}
 
-/*------------------------------------------------------
-slider bar
--------------------------------------------------------*/
 input {
   width: 100%;
   background-color: #ffffff;
 }
 
-.doughnut {
-  float: left;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
