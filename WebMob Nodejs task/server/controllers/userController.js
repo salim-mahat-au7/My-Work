@@ -1,47 +1,11 @@
-const bcrypt = require("bcryptjs");
-const cloudinary = require("../utils/cloudinary");
 //Models
 const User = require("../models/user");
 
 //validate
 const validateForgotPassword = require("../validation/forgotPassword");
 
-
 //fuction
 module.exports = {
-  //------------------------------------user-profile-update----------------------------
-
-  profileUpdate: async (req, res, next) => {
-    try {
-
-      //loged in user
-      const { _id } = req.user;
-      //given name password imgurl
-      const { name, password, imgUrl } = req.body;
-
-      //hashing the password and storing into variable
-      const hashedPassword = await bcrypt.hash(password, 10);
-
-      const file = req.files.file;
-
-      await cloudinary.uploader.upload(
-        file.tempFilePath,
-        { resource_type: "image" },
-        async function (err, result){
-        await User.findOneAndUpdate({ _id }, { name, password: hashedPassword, imgUrl:result.secure_url,});
-        //success message
-        return res
-          .status(200)
-          .json({ message: "User Prfile updated successfully" });
-        }
-      )
-    } catch (err) {
-      console.log("Error in updating Prfile", err.message);
-      return res
-        .status(400)
-        .json({ message: `Error in updating Prfile ${err.message}` });
-    }
-  },
 
   //----------------------------user-acount-delete-----------------------------
 

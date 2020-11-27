@@ -1,7 +1,6 @@
 const { Router } = require("express");
 const passport = require("passport");
 
-
 //route instance
 const router = Router();
 
@@ -9,39 +8,27 @@ const router = Router();
 
 const {
   userRegister,
-  userConfirmation,
   userLogin,
-  verifyResendToken,
-  forgotPassword,
-  postOTP,
-
 } = require("../controllers/userAuthController");
 
 //---------------------------- user controller function ----------------------------
 
-const { profileUpdate, userDelete } = require("../controllers/userController");
+const { userDelete } = require("../controllers/userController");
 
+
+const {
+  addProduct,
+  updateProduct,
+  viewAllProduct,
+} = require("../controllers/productController");
 
 // user routes
 
 router.post("/register", userRegister);
 
-router.get("/userConfirmation/:token", userConfirmation);
 
 router.post("/login", userLogin);
 
-router.post("/resendToken", verifyResendToken);
-
-router.post("/forgotPassword", forgotPassword);
-
-router.post("/postOTP", postOTP);
-
-
-router.post(
-  "/profileUpdate",
-  passport.authenticate("jwt", { session: false }),
-  profileUpdate
-);
 
 router.post(
   "/userDelete",
@@ -50,6 +37,20 @@ router.post(
 );
 
 
+router.post(
+  "/addproduct",
+  passport.authenticate("jwt", { session: false }),
+  addProduct
+);
+
+
+router.post(
+  "/productupdate",
+  passport.authenticate("jwt", { session: false }),
+  updateProduct
+);
+
+router.get("/viewallproduct", viewAllProduct);
 
 //exporting the user routes
 module.exports = router;

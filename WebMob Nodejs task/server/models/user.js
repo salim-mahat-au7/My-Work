@@ -18,19 +18,7 @@ const userSchema = new Schema(
       required: true,
       minlength: 6,
     },
-    imgUrl: {
-      type: String,
-      required: true,
-    },
-    otp: {
-      type: String,
-    },
-    isConfirmed: {
-      type: Boolean,
-      default: false,
-    },
   },
-  { timestamps: true }
 );
 
 module.exports = model("User", userSchema);

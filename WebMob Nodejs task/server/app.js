@@ -5,7 +5,6 @@ const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 const hpp = require("hpp");
-const cors = require("cors");
 const passport = require("passport");
 const fileupload = require("express-fileupload");
 
@@ -49,25 +48,9 @@ app.use(
   })
 );
 
-// app.use(cookieParser());
-
-//Cors method
-app.use(cors());
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin,X-Requested-With,Content-Type,Accept,content-type,application/json"
-  );
-  next();
-});
-
 // Routes
 
 const userRoutes = require("./routes/userRoutes");
-
 
 //Passport Middleware
 app.use(passport.initialize());
