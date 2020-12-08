@@ -1,0 +1,14 @@
+img {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.bg-dark span {
+  color: white;
+}
+
+hr {
+  background-color: orange;
+}
+
